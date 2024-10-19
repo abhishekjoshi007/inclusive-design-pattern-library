@@ -1,0 +1,66 @@
+{
+  "name": "geekdesign-design-react",
+  "description": "A React component library based on Tailwind CSS",
+  "version": "1.1.0",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "engines": {
+    "node": ">=10"
+  },
+  "scripts": {
+    "build-tailwind": "NODE_ENV=production npx tailwindcss -i geekdesign.css -o ./dist/geekdesign.css --minify",
+    "build": "tsdx build && npm run build-tailwind",
+    "storybook": "export NODE_OPTIONS=--openssl-legacy-provider && start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "format": "prettier --write .",
+    "prepare": "npm run build",
+    "start": "tsdx watch",
+    "lint": "tsdx lint"
+  },
+  "rollup": {
+    "plugins": {
+      "@rollup/plugin-replace": {
+        "preventAssignment": true
+      }
+    }
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "author": "Albin Groen",
+  "module": "dist/tailui.esm.js",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@storybook/addon-essentials": "^6.4.20",
+    "@storybook/addon-info": "^5.3.21",
+    "@storybook/addon-links": "^6.4.20",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addons": "^6.4.20",
+    "@storybook/react": "^6.4.20",
+    "@tailwindcss/forms": "^0.5.0",
+    "@types/moment": "^2.13.0",
+    "@types/react": "^17.0.43",
+    "@types/react-dom": "^17.0.14",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.4",
+    "chromatic": "^6.5.3",
+    "postcss": "^8.4.12",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "tailwindcss": "^3.0.23",
+    "tsdx": "^0.14.1",
+    "tslib": "^2.3.1",
+    "typescript": "^4.6.3"
+  },
+  "dependencies": {
+    "@headlessui/react": "^1.5.0",
+    "@heroicons/react": "^1.0.6",
+    "@radix-ui/react-tooltip": "^0.1.7",
+    "moment": "^2.29.2"
+  }
+}
